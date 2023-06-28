@@ -1,5 +1,7 @@
 import MapView from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import { Marker } from "react-native-maps";
+import React from 'react';
+import themeContext from '../theme/themeContext';
 import {
     TouchableOpacity,
     StyleSheet,
@@ -8,6 +10,7 @@ import {
     SafeAreaView,
     Image
   } from 'react-native';
+import { useContext } from 'react';
 
   
   const Woei = {
@@ -73,8 +76,11 @@ import {
 
    
 const MapScreen = () => {
+
+  const theme = useContext(themeContext);
+
     return (
-   <View style={styles.container}>
+   <View style={[styles.container, {backgroundColor: theme.backgroundColor} ]}>
      <MapView
        style={styles.map}
        region={{
@@ -96,14 +102,7 @@ const MapScreen = () => {
       <Marker coordinate={x21} ><Image source={require('./Images/x21.png')} style={{height: 20, width:21.5  }} /></Marker>
      </MapView>
 
-     <Text
-            style={{
-              fontSize: 25,
-              textAlign: 'center',
-              marginBottom: -125
-            }}>
-            Welkom op de map, zie hier boven alle sneakers stores
-          </Text>
+     <Text style={[styles.text, {color: theme.color}]}> Welkom op de map, zie hier boven alle sneakers stores </Text>
    </View>
     );
 }
@@ -119,6 +118,12 @@ const styles = StyleSheet.create({
     map: {
       ...StyleSheet.absoluteFillObject,
     },
+
+    text: {
+      fontSize: 25,
+      textAlign: 'center',
+      marginBottom: -125
+    }
    });
    
 export default MapScreen
