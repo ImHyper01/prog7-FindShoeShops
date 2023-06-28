@@ -11,22 +11,22 @@ import {
 
   
   const BeachClub = {
-    latitude: 51.98866299707557,
-    longitude: 4.1074257216358525,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
+    "title": "Sneaker World",
+    "description": "A leading sneaker store in Rotterdam offering a wide range of popular brands.",
+    "latitude": 51.9225,
+    "longitude": 4.47917
   };
   const TwoSeaons = {
-    latitude: 51.988184637289315,
-    longitude: 4.106383320478913,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
+    "title": "Kicks Avenue",
+    "description": "Discover the latest sneaker releases and limited editions at Kicks Avenue in Rotterdam.",
+    "latitude": 51.91833,
+    "longitude": 4.47667
   };
   const Villa = {
-    latitude: 51.988011123756976,
-    longitude: 4.105871599572002,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
+    "title": "SoleJunction",
+    "description": "Find your perfect pair of sneakers at Sole Junction, a trendy store located in the heart of Rotterdam.",
+    "latitude": 51.92222,
+    "longitude": 4.48028
   };
   const Bing = {
     latitude:  51.98733719450499,
@@ -40,6 +40,74 @@ import {
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };
+
+
+
+  // {
+  //   "stores": [
+  //     {
+  //       "title": "Sneaker World",
+  //       "description": "A leading sneaker store in Rotterdam offering a wide range of popular brands.",
+  //       "latitude": 51.9225,
+  //       "longitude": 4.47917
+  //     },
+  //     {
+  //       "title": "Kicks Avenue",
+  //       "description": "Discover the latest sneaker releases and limited editions at Kicks Avenue in Rotterdam.",
+  //       "latitude": 51.91833,
+  //       "longitude": 4.47667
+  //     },
+  //     {
+  //       "title": "Sole Junction",
+  //       "description": "Find your perfect pair of sneakers at Sole Junction, a trendy store located in the heart of Rotterdam.",
+  //       "latitude": 51.92222,
+  //       "longitude": 4.48028
+  //     },
+  //     {
+  //       "title": "Sneaker Central",
+  //       "description": "Visit Sneaker Central for a wide selection of sneakers and streetwear in Rotterdam.",
+  //       "latitude": 51.92056,
+  //       "longitude": 4.4775
+  //     },
+  //     {
+  //       "title": "Foot Locker",
+  //       "description": "A well-known sneaker retailer with a branch in Rotterdam, offering a variety of athletic footwear.",
+  //       "latitude": 51.91972,
+  //       "longitude": 4.47778
+  //     },
+  //     {
+  //       "title": "Urban Kicks",
+  //       "description": "Experience the urban sneaker culture at Urban Kicks, located in a vibrant neighborhood of Rotterdam.",
+  //       "latitude": 51.92444,
+  //       "longitude": 4.4825
+  //     },
+  //     {
+  //       "title": "Sneaker Spot",
+  //       "description": "Sneaker Spot offers a curated selection of sneakers and accessories in Rotterdam.",
+  //       "latitude": 51.9175,
+  //       "longitude": 4.47444
+  //     },
+  //     {
+  //       "title": "Fresh Soles",
+  //       "description": "Fresh Soles is the go-to destination for sneaker enthusiasts in Rotterdam.",
+  //       "latitude": 51.91667,
+  //       "longitude": 4.47139
+  //     },
+  //     {
+  //       "title": "Sneak Avenue",
+  //       "description": "Discover the latest trends and classic sneaker styles at Sneak Avenue in Rotterdam.",
+  //       "latitude": 51.92139,
+  //       "longitude": 4.47639
+  //     },
+  //     {
+  //       "title": "Sneaker District",
+  //       "description": "With a wide range of sneakers and exclusive releases, Sneaker District is a must-visit store in Rotterdam.",
+  //       "latitude": 51.92194,
+  //       "longitude": 4.47472
+  //     }
+  //   ]
+  // }
+  
 
 
 
