@@ -15,73 +15,14 @@ const MapScreen = () => {
 
   const fetchMarkers = async () => {
     try {
-      const response = await fetch('./map/map.json');
+      const response = await fetch('map.json');
       const data = await response.json();
       setMarkers(data.markers);
     } catch (error) {
       console.error('Error fetching data:', error);
   }
 };
-  // const Woei = {
-  //   "title": "Woei",
-  //   "description": "Woei is a boutique sneaker store that offers a carefully curated selection of sneakers, clothing, and accessories.",
-  //   latitude: 51.92274,
-  //   longitude: 4.49352
-  // };
-  // const Ansh46 = {
-  //   "title": "Ansh46",
-  //     "description": "Ansh46 is a high-end sneaker store featuring a blend of luxury fashion and streetwear brands.",
-  //     "latitude": 51.91925,
-  //     "longitude":  4.47421
-  // };
-  // const Oqium = {
-  //   "title": "Oqium",
-  //   "description": "Its an sneaker store where u can find special releases and nba merch.",
-  //   latitude: 51.92187,
-  //   longitude: 4.47548
-  // };
-  // const Snipes ={
-  //   "title": "Snipes",
-  //   "description": "It's an german base sneaker brand that sells the newest sneakers in the game.",
-  //   latitude: 51.92104,
-  //   longitude: 4.47693
-  // };
-  // const FootLocker = {
-  //   "title": "Foot Locker",
-  //   "description": "A well-known sneaker retailer with a branch in Rotterdam, offering a variety of athletic footwear.",
-  //   latitude: 51.92097,
-  //   longitude: 4.47670
-  // }
-  // const Pirri = {
-  //   "title": "Pirri",
-  //   "description": "Sells shoes for resell, got the most exclusive sneakers in the game in store.",
-  //   latitude: 51.91911,
-  //   longitude: 4.47358
-  // }
-  // const Sport2000 ={
-  //   "title": "Sport 2000",
-  //   "description": "The Sport 2000 is a global retail chain specializing in athletic footwear and sportswear.",
-  //   "latitude": 51.92060,
-  //   "longitude": 4.48372
-  // }
-  // const JdSports = {
-  //   "title": "JD Sports",
-  //   "description": "Its an sport store where u can get most of you sport sneakers to run.",
-  //   latitude: 51.91992,
-  //   longitude: 4.47725
-  // }
-  // const SideStep = {
-  //   "title": "Side Step",
-  //   "description": "Discover the latest trends and classic sneaker styles at Side Step in Rotterdam.",
-  //   latitude: 51.92026,
-  //   longitude: 4.47736
-  // }
-  // const x21 = {
-  //   "title": "x21",
-  //   "description": "With a wide range of sneakers and exclusive cloathing brands, is a must-visit store in Rotterdam.",
-  //   latitude: 51.92087,
-  //   longitude: 4.48524
-  // }
+ 
   return (
       <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
       <MapView style={styles.map}> 
