@@ -3,6 +3,8 @@ import { View, StyleSheet, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import themeContext from '../theme/themeContext';
 
+import * as Location from 'expo-location';
+
 
 const MapScreen = () => {
 
@@ -25,6 +27,28 @@ const MapScreen = () => {
 useEffect(() => {
   fetchMarkers();
 }, []);
+
+
+useEffect(() => {
+  (async () => {
+    
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      console.log('Permission to access location was denied');
+      return;
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    console.log(location);
+
+    setPin({
+      latitude: location.coords.latitude,
+      longitude: location.longitude,
+    });
+  })();
+}, []);
+
+
  
   return (
   <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
@@ -33,7 +57,12 @@ useEffect(() => {
               longitude: 4.47778,
               latitudeDelta: 0.015,
               longitudeDelta: 0.0121,
-          }}> 
+          }}
+          showsUserLocation={true}
+          onUserLocationChange={(e) => {
+            e.nativeEvent
+          }}
+          > 
           {data.map((item) => 
       <Marker 
           coordinate={{

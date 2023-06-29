@@ -1,5 +1,5 @@
-// React Native Bottom Navigation
-// https://aboutreact.com/react-native-bottom-navigation/
+import {useContext} from 'react';
+import themeContext from '../theme/themeContext';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -10,6 +10,9 @@ import {
 } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
+
+  const theme = useContext(themeContext);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, padding: 16 }}>
@@ -25,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
               textAlign: 'center',
               marginBottom: 16
             }}>
-            Welkom op de home pagina
+            <Text style={[styles.home, { color: theme.color }]}>Welkom op de home pagina</Text>
           </Text>
           <TouchableOpacity
             style={styles.button}
@@ -66,6 +69,9 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 300,
     marginTop: 16,
+  },
+  home: {
+
   },
 });
 export default HomeScreen;
