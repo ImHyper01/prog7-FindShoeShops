@@ -1,13 +1,17 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, SafeAreaView, Switch, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, Switch, TouchableOpacity, State } from 'react-native';
 import { EventRegister } from 'react-native-event-listeners';
 import themeContext from '../theme/themeContext';
 import { StyleSheet } from 'react-native';
+import translations from '../languages/locales';
+
 
 const SettingsPage = () => {
   const theme = useContext(themeContext);
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('nederlands');
+
+ 
 
   const toggleLanguage = () => {
     const newLanguage = language === 'nederlands' ? 'engels' : 'nederlands';
