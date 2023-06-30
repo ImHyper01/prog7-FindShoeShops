@@ -12,6 +12,7 @@ import HomeScreen from './pages/HomeScreen';
 import ListScreen from './pages/ListScreen';
 import SettingsScreen from './pages/SettingsScreen';
 import MapScreen from './pages/MapScreen';
+import SavedScreen from './savedItems/SavedScreen';
 
 //navigatie bar gebruiken
 const Stack = createNativeStackNavigator();
@@ -55,6 +56,19 @@ function ListStack() {
   );
 }
 //hier roep ik de navigatie aan
+function SavedStack() {
+  return (
+  <Stack.Navigator
+        initialRouteName="Save"
+        screenOptions={{headerShown: false}}
+        >
+          <Stack.Screen
+          name="Save"
+          component={SavedScreen} />
+      </Stack.Navigator>
+  );
+}
+//hier roep ik de navigatie aan
 function MapStack() {
   return (
     <Stack.Navigator
@@ -66,7 +80,6 @@ function MapStack() {
     </Stack.Navigator>
   );
 }
-
 
 function App() {
   //hier begin ik aan de darkmodus
@@ -109,6 +122,10 @@ function App() {
               iconName = focused
                 ? 'format-list-bulleted'
                 : 'format-list-bulleted';
+            }else if(route.name === 'SaveStack') {
+              iconName = focused
+                ? 'save'
+                : 'save';
             }else if (route.name === 'SettingsStack') {
               iconName = focused
                 ? 'cog'
@@ -146,6 +163,13 @@ function App() {
           options={{
             tabBarLabel: 'List',
             title: 'List'
+          }} /> 
+          <Tab.Screen
+          name="SavedStack"
+          component={SavedStack}
+          options={{
+            tabBarLabel: 'Saved',
+            title: 'Saved'
           }} /> 
         <Tab.Screen
           name="SettingsStack"
