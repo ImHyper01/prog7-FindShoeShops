@@ -1,17 +1,18 @@
+//hier importeer ik alles wat ik wil gebruiken in de applicatie
 import React, { useEffect, useState, useContext } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import themeContext from '../theme/themeContext';
 
-import * as Location from 'expo-location';
-
-
+//hier maak ik de functie aan voor de map
 const MapScreen = () => {
 
+  //hier roep ik de dark modus aan via de theme
+  //Hier maak ik variables om dadelijk de data te kunnen fetchen
   const theme = useContext(themeContext);
   const [data, setData] = useState([]);
 
-
+    //hier fetch ik data uit de json file die op de stud hosted staat
   const fetchMarkers = async () => {
     try {
       const response = await fetch('https://stud.hosted.hr.nl/1027469/map.json');
@@ -24,11 +25,12 @@ const MapScreen = () => {
   }
 };
 
+//Hier haal ik de functie op, om zo de data te kunnen gebruiken
 useEffect(() => {
   fetchMarkers();
 }, []);
 
-
+//Hier vraag ik als ik toestemming mag, om je locatie te mogen weten
 useEffect(() => {
   (async () => {
     
@@ -49,7 +51,8 @@ useEffect(() => {
 }, []);
 
 
- 
+ //Hier zet ik een start punt van de map als je de map opend. ik heb dit staan midden rotterdam
+ //Als je toestemming heb gegeven voor locatie, komt je locatie ook in de map te staan door showsUserLocation
   return (
   <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
     <MapView style={styles.map} region={{
@@ -65,6 +68,7 @@ useEffect(() => {
           > 
           {data.map((item) => 
       <Marker 
+      //hier fetch ik de data uit de json file om zo de markers op de map te kunnen zetten.
           coordinate={{
             latitude: item.latitude,
              longitude: item.longitude,
@@ -79,6 +83,7 @@ useEffect(() => {
     );
   };
   
+  //stylechanges
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
